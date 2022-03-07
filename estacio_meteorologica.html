@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="estacio_meteorologica.css">
     </head>
     <body>
@@ -15,7 +16,16 @@
             .done(function(data) {
                 console.log(data);
                 var temperatura = data.main.temp;
-                var humitat = d;
+                var humitat = data.main.humidity;
+                var pressio = data.main.pressure;
+                var sunset = data.sys.sunset;
+                var sunrise = data.sys.sunrise;
+                var direccioVent = data.wind.deg;
+                var velocitatVent = data.wind.speed;
+                var descripcioTemps = data.weather.description;
+              /*  Hora de sortida i posta de sol.
+Velocitat i direcció del vent.
+Descripció del temps (Si fa nuvol, sol, tormenta, etc)*/
             });
    })();
         </script>
