@@ -5,29 +5,26 @@
         <link rel="stylesheet" href="estacio_meteorologica.css">
     </head>
     <body>
+        <div id="demo"></div>
 
-        <p id="demo">
-
-        </p>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>
        (function() {
             $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=41.6333&lon=0.9&appid=b33675d254b3894f1d636da10bb334b9&units=metric&mode=json")
-            .done(function(data) {
-                console.log(data);
-                var temperatura = data.main.temp;
-                var humitat = data.main.humidity;
-                var pressio = data.main.pressure;
-                var sunset = data.sys.sunset;
-                var sunrise = data.sys.sunrise;
-                var direccioVent = data.wind.deg;
-                var velocitatVent = data.wind.speed;
-                var descripcioTemps = data.weather.description;
-              /*  Hora de sortida i posta de sol.
-Velocitat i direcció del vent.
-Descripció del temps (Si fa nuvol, sol, tormenta, etc)*/
+                .done(function(data) {
+                    console.log(data);
+                    var ciutat = data.name;
+                    var temperatura = data.main.temp;
+                    var humitat = data.main.humidity;
+                    var pressio = data.main.pressure;
+                    var sunset = data.sys.sunset;
+                    var sunrise = data.sys.sunrise;
+                    var direccioVent = data.wind.deg;
+                    var velocitatVent = data.wind.speed;
+                    var descripcioTemps = data.weather.description;
+                $('#demo').html("<p>"+ciutat+"</p>");
             });
-   })();
+        })();
         </script>
 
     </body>
