@@ -1,0 +1,76 @@
+* {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+html, body {
+    height: 100%;
+    background-color: rgb(0, 128, 122);
+}
+
+#contingut {
+    max-width: 33.33%;
+    margin-left: 33.33%;
+    background-color: #008FFF;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+img {
+    position: relative;
+    top: 10px;
+    width: 3vh;
+}
+#estadistiques {
+    display: grid;
+    max-width: 50%;
+}
+
+#sol, #descripcio, #vent {
+    display: grid;
+    
+}
+
+#sol, #vent {
+    max-width: min-content;
+}
+
+#sol, #descripcio {
+    grid-column: 1;
+}
+
+#vent {
+    grid-column: 2;
+}
+
+#sentit, #velocitat {
+    grid-column: 2;
+}
+
+#sunset, #sunrise, #desc {
+    grid-column: 1;
+}
+
+#posta, #sortida {
+    grid-column: 2;
+}
+
+#posta, #sunset, #direction {
+    grid-row: 1;
+}
+
+#sortida, #sunrise {
+    grid-row: 2;
+}
+
+ #direction, #speed {
+     grid-column: 1;
+ }
+
+ #direction, #sentit {
+     grid-row: 1;
+ }
+
+ #speed, #velocitat {
+     grid-row: 2;
+ }

@@ -2,40 +2,31 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="estacio_meteorologica.css">
+        <link rel="stylesheet" type="text/css" href="estils.css">
     </head>
     <body>
-        <div id="capcalera">
-            <div id="ciutat">
-
+        <div id="contingut">
+            <div id="capcalera">
+                <div id="ciutat"></div>
+                <div id="temphumit"></div>
             </div>
 
-            <div id="temphumit">
+            <div id="estadistiques">
+                <div id="pressio"></div>
+                <br>
+                <div id="sol">
+                    <img id="sunset" src="imatges/sunset.png">
+                    <img id="sunrise" src="imatges/sunrise.png">
+                </div>
 
-            </div>
+                <div id="vent">
+                    <img id="direction" src="imatges/direction.png">
+                    <img id="speed" src="imatges/wind.png">
+                </div>
 
-        </div>
-
-        <div id="estadistiques">
-            <div id="pressio">
-
-            </div>
-            <br>
-            <div id="sol">
-                <img id="sunset" src="imatges/sunset.png">
-                <img id="sunrise" src="imatges/sunrise.png">
-            </div>
-
-            <div id="vent">
-                <img id="direction" src="imatges/direction.png">
-                <img id="speed" src="imatges/wind.png">
-            </div>
-
-            <div id="descripcio">
-                
+                <div id="descripcio"></div>
             </div>
         </div>
-
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>
@@ -52,12 +43,25 @@
                         var direccioVent = data.wind.deg;
                         var velocitatVent = data.wind.speed;
                         var descripcioTemps = data.weather[0].description;
-
+                        var codiTemps = data.weather[0].id;
                         $('#temphumit').html("<h3>"+ temperatura + "C " + humitat + "%" +"</h3>");
+                        $("#pressio").html('<p id="pressure">' + pressio + " hPa" + '</p>');
                         $('#sol').append('<p id="posta">&nbsp;&nbsp;' +  unixAData(unix_sunset) + '</p>');
                         $('#sol').append('<p id="sortida">&nbsp;&nbsp;' +  unixAData(unix_sunrise) + '   </p>');
-                        $("#descripcio").append('<p id="desc">' + descripcioTemps + '</p>');
+                        $("#descripcio").append('<p id="desc"> Descripcio actual: ' + descripcioTemps + '</p>');
+                        $("#vent").append('<p id="sentit">&nbsp;&nbsp;' + direccioVent + "º" + '</p>');
+                        $("#vent").append('<p id="velocitat">&nbsp;&nbsp;' + velocitatVent + "m/s" + '</p>');
 
+                        if(codiTemps >= 300 && codiTemps <= 321) {img("09d@2x.png")}
+                        if(codiTemps >= 500 && codiTemps <= 504) {img("10d@2x.png")}
+                        if(codiTemps >= 511) {img("13d@2x.png")}
+                        if(codiTemps >= 520 && codiTemps <= 531) {img("09d@2x.png")}
+                        if(codiTemps >= 600 && codiTemps <= 622) {img("13d@2x.png")}
+                        if(codiTemps >= 701 && codiTemps <= 781) {img("50d@2x.png")}
+                        if(codiTemps >= 800) {img("01d@2x.png")}
+                        if(codiTemps >= 801) {img("02d@2x.png")}
+                        if(codiTemps >= 802 && codiTemps <= 804) {img("04d@2x.png")}
+                        console.log(codiTemps);
 
                         function unixAData(temps_unix) {
                             var date = new Date(temps_unix * 1000);
@@ -66,6 +70,10 @@
                             var seconds = "0" + date.getSeconds();
                             var tempsFormatejat = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
                             return tempsFormatejat;
+                        }
+
+                        function img(img) {
+                            $("#ciutat").append(`<img src="imatges/weather_icons/${img}">`);
                         }
                         
 
