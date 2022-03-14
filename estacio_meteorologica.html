@@ -51,18 +51,19 @@
                         $("#descripcio").append('<p id="desc"> Descripcio actual: ' + descripcioTemps + '</p>');
                         $("#vent").append('<p id="sentit">&nbsp;&nbsp;' + direccioVent + "º" + '</p>');
                         $("#vent").append('<p id="velocitat">&nbsp;&nbsp;' + velocitatVent + "m/s" + '</p>');
+                        
+                        //condicions del temps
+                        if(codiTemps >= 300 && codiTemps <= 321) {img("09d@2x.png")} 
+                        else if(codiTemps >= 500 && codiTemps <= 504) {img("10d@2x.png")}
+                        else if(codiTemps == 511) {img("13d@2x.png")}
+                        else if(codiTemps >= 520 && codiTemps <= 531) {img("09d@2x.png")}
+                        else if(codiTemps >= 600 && codiTemps <= 622) {img("13d@2x.png")}
+                        else if(codiTemps >= 701 && codiTemps <= 781) {img("50d@2x.png")}
+                        else if(codiTemps == 800) {img("01d@2x.png")}
+                        else if(codiTemps == 801) {img("02d@2x.png")}
+                        else if(codiTemps >= 802 && codiTemps <= 804) {img("04d@2x.png")}
 
-                        if(codiTemps >= 300 && codiTemps <= 321) {img("09d@2x.png")}
-                        if(codiTemps >= 500 && codiTemps <= 504) {img("10d@2x.png")}
-                        if(codiTemps >= 511) {img("13d@2x.png")}
-                        if(codiTemps >= 520 && codiTemps <= 531) {img("09d@2x.png")}
-                        if(codiTemps >= 600 && codiTemps <= 622) {img("13d@2x.png")}
-                        if(codiTemps >= 701 && codiTemps <= 781) {img("50d@2x.png")}
-                        if(codiTemps >= 800) {img("01d@2x.png")}
-                        if(codiTemps >= 801) {img("02d@2x.png")}
-                        if(codiTemps >= 802 && codiTemps <= 804) {img("04d@2x.png")}
-                        console.log(codiTemps);
-
+                        //convertir d'unix a una data hh/mm/ss
                         function unixAData(temps_unix) {
                             var date = new Date(temps_unix * 1000);
                             var hours = date.getHours();
@@ -72,8 +73,9 @@
                             return tempsFormatejat;
                         }
 
-                        function img(img) {
-                            $("#ciutat").append(`<img src="imatges/weather_icons/${img}">`);
+                        //funcio per treure l'imatge correcte
+                        function img(x) {
+                            $("#capcalera").append(`<img id="condicio" src="http://openweathermap.org/img/wn/${x}">`);
                             console.log("yes");
                         }
                         

@@ -4,7 +4,6 @@
 }
 
 html, body {
-    height: 100%;
     background-color: rgb(0, 128, 122);
 }
 
@@ -26,7 +25,7 @@ img {
     max-width: 50%;
 }
 
-#sol, #descripcio, #vent {
+#sol, #descripcio, #vent, #capcalera {
     display: grid;
     
 }
@@ -47,11 +46,11 @@ img {
     grid-column: 2;
 }
 
-#sunset, #sunrise, #desc {
+#sunset, #sunrise, #desc, #ciutat, #temphumit {
     grid-column: 1;
 }
 
-#posta, #sortida {
+#posta, #sortida, #condicio {
     grid-column: 2;
 }
 
