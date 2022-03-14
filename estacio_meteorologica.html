@@ -47,7 +47,7 @@
                         var codiTemps = data.weather[0].id;
 
                         //canviar/adjuntar el contingut
-                        $('#temphumit').html("<h3>"+ temperatura + "C " + humitat + "%" +"</h3>");
+                        $('#temphumit').html("<h3>"+ temperatura + "C // " + humitat + "%" +"</h3>");
                         $("#pressio").html('<p id="pressure">' + pressio + " hPa" + '</p>');
                         $('#sol').append('<p id="posta">&nbsp;&nbsp;' +  unixAData(unix_sunset) + '</p>');
                         $('#sol').append('<p id="sortida">&nbsp;&nbsp;' +  unixAData(unix_sunrise) + '   </p>');

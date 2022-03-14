@@ -3,16 +3,17 @@
     color: white;
 }
 
-html, body {
-    background-color: rgb(0, 128, 122);
+html {
+    background-image:url("imatges/lapland.jpg");
+    background-size: cover;
 }
-
 #contingut {
     max-width: 33.33%;
     margin-left: 33.33%;
     background-color: #008FFF;
     padding: 10px;
     border: 2px solid black;
+    box-shadow: 0px 0px 10px 0px black;
 }
 
 #condicio {
