@@ -33,7 +33,8 @@
         (function() {
                 $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=41.6333&lon=0.9&appid=b33675d254b3894f1d636da10bb334b9&units=metric&lang=ca&mode=json")
                     .done(function(data) {
-                        console.log(data);
+
+                        //els variables
                         var ciutat = data.name;
                         var temperatura = data.main.temp;
                         var humitat = data.main.humidity;
@@ -44,6 +45,8 @@
                         var velocitatVent = data.wind.speed;
                         var descripcioTemps = data.weather[0].description;
                         var codiTemps = data.weather[0].id;
+
+                        //canviar/adjuntar el contingut
                         $('#temphumit').html("<h3>"+ temperatura + "C " + humitat + "%" +"</h3>");
                         $("#pressio").html('<p id="pressure">' + pressio + " hPa" + '</p>');
                         $('#sol').append('<p id="posta">&nbsp;&nbsp;' +  unixAData(unix_sunset) + '</p>');
@@ -78,14 +81,12 @@
                             $("#capcalera").append(`<img id="condicio" src="http://openweathermap.org/img/wn/${x}">`);
                             console.log("yes");
                         }
-                        
 
                     $('#ciutat').html("<h1>"+ciutat+"</h1>");
                     document.querySelector("#direction").style.transform = `rotate(${direccioVent-90}deg)`;
                 });
             })();
         </script>
-
     </body>
 </html>
 

@@ -15,6 +15,12 @@ html, body {
     border: 2px solid black;
 }
 
+#condicio {
+    width: 10vh;
+    position: relative;
+    left: -10vh;
+}
+
 img {
     position: relative;
     top: 10px;
@@ -34,42 +40,18 @@ img {
     max-width: min-content;
 }
 
-#sol, #descripcio {
+#sunset, #sunrise, #desc, #ciutat, #temphumit, #sol, #descripcio, #direction, #speed {
     grid-column: 1;
 }
 
-#vent {
+#posta, #sortida, #condicio, #sentit, #velocitat, #vent  {
     grid-column: 2;
 }
 
-#sentit, #velocitat {
-    grid-column: 2;
-}
-
-#sunset, #sunrise, #desc, #ciutat, #temphumit {
-    grid-column: 1;
-}
-
-#posta, #sortida, #condicio {
-    grid-column: 2;
-}
-
-#posta, #sunset, #direction {
+#posta, #sunset, #direction, #condicio, #capcalera, #sentit {
     grid-row: 1;
 }
 
-#sortida, #sunrise {
+#sortida, #sunrise, #speed, #velocitat {
     grid-row: 2;
 }
-
- #direction, #speed {
-     grid-column: 1;
- }
-
- #direction, #sentit {
-     grid-row: 1;
- }
-
- #speed, #velocitat {
-     grid-row: 2;
- }
